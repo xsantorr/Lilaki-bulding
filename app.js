@@ -1,12 +1,4 @@
-/* =============================================
-   PRIMEBUILD SOLUTIONS — script.js
-   ============================================= */
-
 'use strict';
-
-/* ──────────────────────────────────────────────
-   1. STICKY NAVBAR
-   ────────────────────────────────────────────── */
 const navbar = document.getElementById('navbar');
 
 const handleScroll = () => {
@@ -20,9 +12,6 @@ const handleScroll = () => {
 window.addEventListener('scroll', handleScroll, { passive: true });
 handleScroll();
 
-/* ──────────────────────────────────────────────
-   2. HAMBURGER / MOBILE NAV
-   ────────────────────────────────────────────── */
 const hamburger = document.getElementById('hamburger');
 const navLinks  = document.getElementById('navLinks');
 const navItems  = navLinks.querySelectorAll('a');
@@ -41,9 +30,6 @@ navItems.forEach(link => {
   });
 });
 
-/* ──────────────────────────────────────────────
-   3. SCROLL REVEAL
-   ────────────────────────────────────────────── */
 const revealObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry, i) => {
@@ -77,9 +63,6 @@ document.querySelectorAll('.reveal').forEach((el, idx) => {
   revealObserver.observe(el);
 });
 
-/* ──────────────────────────────────────────────
-   4. COUNTER ANIMATION
-   ────────────────────────────────────────────── */
 const counters = document.querySelectorAll('.stat-num[data-target]');
 
 const animateCounter = (el) => {
@@ -113,9 +96,6 @@ const counterObserver = new IntersectionObserver(
 
 counters.forEach(c => counterObserver.observe(c));
 
-/* ──────────────────────────────────────────────
-   5. GALLERY LIGHTBOX
-   ────────────────────────────────────────────── */
 const lightbox      = document.getElementById('lightbox');
 const lightboxImg   = document.getElementById('lightboxImg');
 const lightboxCap   = document.getElementById('lightboxCaption');
@@ -171,9 +151,6 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'ArrowRight') showNext();
 });
 
-/* ──────────────────────────────────────────────
-   6. TESTIMONIALS SLIDER
-   ────────────────────────────────────────────── */
 const track   = document.getElementById('testimonialTrack');
 const dots    = document.querySelectorAll('.t-dot');
 const tPrev   = document.getElementById('tPrev');
@@ -205,7 +182,6 @@ dots.forEach(dot => {
   });
 });
 
-// Touch/swipe support
 let touchStartX = 0;
 track.addEventListener('touchstart', (e) => { touchStartX = e.changedTouches[0].clientX; }, { passive: true });
 track.addEventListener('touchend', (e) => {
@@ -220,9 +196,6 @@ track.addEventListener('touchend', (e) => {
 goTo(0);
 startAuto();
 
-/* ──────────────────────────────────────────────
-   7. CONTACT FORM
-   ────────────────────────────────────────────── */
 const contactForm = document.getElementById('contactForm');
 const toast       = document.getElementById('toast');
 
@@ -234,13 +207,11 @@ const showToast = () => {
 contactForm.addEventListener('submit', (e) => {
   e.preventDefault();
 
-  // Basic validation
   const name    = document.getElementById('name').value.trim();
   const email   = document.getElementById('email').value.trim();
   const message = document.getElementById('message').value.trim();
 
   if (!name || !email || !message) {
-    // Highlight empty required fields
     [document.getElementById('name'), document.getElementById('email'), document.getElementById('message')].forEach(field => {
       if (!field.value.trim()) {
         field.style.borderColor = '#c0392b';
@@ -250,7 +221,6 @@ contactForm.addEventListener('submit', (e) => {
     return;
   }
 
-  // Simulate form submission
   const btn = contactForm.querySelector('button[type="submit"]');
   btn.textContent = 'Sending…';
   btn.disabled = true;
@@ -263,9 +233,6 @@ contactForm.addEventListener('submit', (e) => {
   }, 1200);
 });
 
-/* ──────────────────────────────────────────────
-   8. SMOOTH SCROLL FOR ALL ANCHOR LINKS
-   ────────────────────────────────────────────── */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', (e) => {
     const targetId = anchor.getAttribute('href');
@@ -279,9 +246,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-/* ──────────────────────────────────────────────
-   9. ACTIVE NAV HIGHLIGHT ON SCROLL
-   ────────────────────────────────────────────── */
 const sections = document.querySelectorAll('section[id]');
 const navAnchors = document.querySelectorAll('.nav-link:not(.nav-cta)');
 
