@@ -1253,7 +1253,7 @@ section {
    ============================================================ */
 .toast {
   position: fixed;
-  bottom: 32px;
+  bottom: 2px;
   left: 50%;
   transform: translateX(-50%) translateY(120%);
   background: var(--navy);
