@@ -199,6 +199,7 @@ section {
   background: var(--navy);
   padding: 14px 0;
   box-shadow: 0 4px 24px rgba(13, 27, 42, 0.25);
+  transition: background var(--transition);
 }
 
 .nav-container {

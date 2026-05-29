@@ -34,7 +34,6 @@ const revealObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry, i) => {
       if (entry.isIntersecting) {
-        // Stagger children of a grid if they appear together
         entry.target.style.transitionDelay = '0ms';
         entry.target.classList.add('visible');
         revealObserver.unobserve(entry.target);
@@ -53,7 +52,6 @@ const staggerGroups = [
 ];
 
 document.querySelectorAll('.reveal').forEach((el, idx) => {
-  // Check if it's inside a grid container for staggering
   const parent = el.parentElement;
   if (parent && staggerGroups.some(sel => parent.matches(sel))) {
     const siblings = Array.from(parent.children);
