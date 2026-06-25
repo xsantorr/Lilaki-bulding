@@ -11,8 +11,8 @@
   --gold-light: #e2c068;
   --gold-dark: #a8872e;
 
-  --font-display: 'Cormorant Garamond', serif;
-  --font-body: 'Montserrat', sans-serif;
+  --font-display: 'Roboto', sans-serif;
+  --font-body: 'Inter', sans-serif;
 
   --radius: 4px;
   --shadow: 0 8px 40px rgba(13, 27, 42, 0.12);
